@@ -1,3 +1,10 @@
+
+<h1 align="center">
+    <img alt="TodoList" src=".github/logo.png" width="200px" />
+	Todo List
+</h1>
+
+
 # Prova de Avaliação Técnica
 
 Esta Prova consiste em desenvolver uma aplicação WEB feita em ReactJS para fim de avaliação Técnica no processo seletivo da Tecmite.
@@ -8,47 +15,69 @@ A aplicação que será desenvolvida é um sistema de lista de afazeres (Todo-Li
 
 A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim (opcional).
 
-# Método de Avaliação
+### :pencil: Requerimentos
 
-A prova possui um critério mínimo de requisitos que devem ser entregue, que são:
+_Programas necessários:_
+* [Git](https://git-scm.com)
+* [Node](https://nodejs.org/)
+* [Yarn](https://yarnpkg.com/)
+* [Docker](https://www.docker.com/)
 
- - Capacidade de criar Tarefas
- - Categorizar Tarefas
- - Adicionar uma Data na Tarefa
- - Back-end e Front-end da aplicação desenvolvidos em ReactJS e NodeJS
 
-A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação etc, isso será avaliado também.
+### 🗄️ Base de dados da aplicação
+- [Postgres](https://github.com/postgres/postgres)
+- [Redis](https://redis.io/)
 
-# O que será avaliado
-Queremos avaliar sua capacidade de desenvolver e documentar um back-end para uma aplicação. Serão avaliados:
+## 🗄️ Criar as bases de dados
 
-Código bem escrito e limpo;
-Quais ferramentas foram usadas, como e porquê, além do seu conhecimento das mesmas;
-Seu conhecimento em banco de dados, requisições HTTP, APIs REST, etc;
-Sua capacidade de se comprometer com o que foi fornecido;
-Sua capacidade de documentação da sua parte da aplicação.
+```
+# Criar um container com a imagem do Postgres
+docker run --name todolist -e POSTGRES_PASSWORD=todolist -p 5432:5432 -d postgres
+(O login e senha serão: todolist)
 
-# Itens Adicionais
+# Criar um container com a imagem do Redis
+docker run --name redis -p 6379:6379 -d -t redis:alpine
 
-Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais na prova:
+# Inicie o container do Postgres
+docker start todolist
 
-- Testes de front-end;
-- Uso de ferramentas externas que facilitem o seu trabalho;
-- Cuidados especiais com otimização, padrões, entre outros;
-- Migrations ou script para configuração do banco de dados utilizado;
-- Testes;
-- Conteinerização da aplicação;
-- Autenticação e autorização (OAuth, JWT);
-- Pipelines de CI/CD (GitLab, CircleCI, TravisCI, etc);
-- Sugestões sobre o challenge embasadas em alguma argumentação.
-- Utilização de Typescript.
+# Inicie o container do Redis
+docker start redis
 
-# Duração da Prova
+```
 
-A duração da prova é de 5 dias a contar a partir da data que for enviado o link do repositório.
+## 🖥 Iniciando a API REST
 
-# Passos para entregar a Prova
+1. Clonar o repositório com `git clone https://github.com/jvrviegas/prova-full-stack.git`
+2. Entre dentro da pasta do projeto com `cd prova-full-stack/backend`
+3. Instale todas as dependências com o comando `yarn`
+4. Criar a base de dados todolist utilizando o gerenciador de preferência (aconselho o [Postbird](https://www.electronjs.org/apps/postbird))
+5. Executar as migrations:
+6. `yarn sequelize db:migrate`
+7. Para excutar a api execute o comando a seguir no terminal:
+8. `yarn dev` 
+9. Para executar as filas execute no terminal 
+10. `yarn queue`
 
- - Criar um fork do repositorio
- - adicionar o código no repositorio forkeado
- - enviar o link da prova para o discord.
+## 💻 Iniciando a plataforma web
+
+1. Abra um terminal entre na pasta `cd prova-full-stack/frontend`
+2. Instale todas as dependências com o comando `yarn`
+3. Para inicializar a plataforma execute o comando: 
+4. `yarn start`
+5. Uma nova aba do navegador abrirá na url http://localhost:3000 
+6. Efetue o cadastro e login na plataforma: 
+
+## :hammer: Ferramentas utilizadas
+
+- ⚛️ **Node.js** - É uma Biblioteca JavaScript para criar mobile Apps 
+- ⚛️ **ReactJs** - É uma Biblioteca Javascript para criar interfaces de usuário.
+- 💅 **Styled Components** - É uma Biblioteca Javascript pra estilizar componentes.
+- 📄 **Axios** - É uma Biblioteca Javascript para fazer requisições http
+- 📄 **ESLint** - É uma Biblioteca Javascript para procurar e resolver problemas de identação e outros no código
+- 📄 **Redux** - É um controlador de estados gerais da aplicação.
+- 📄 **Redux-saga** - É Biblioteca que foca em fazer os efeitos colaterais (ex: chamadas assíncronas).
+- 📄 **react-toastify** - É Biblioteca para criar toasts para web.
+- 📄 **Immer** - É Biblioteca para alterar estados usando draft(rascunho).
+- 📄 **React Router** - Permite trabalhar com rotas no React JS.
+
