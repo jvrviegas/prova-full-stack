@@ -66,7 +66,8 @@ docker start redis
 3. Para inicializar a plataforma execute o comando: 
 4. `yarn start`
 5. Uma nova aba do navegador abrirá na url http://localhost:3000 
-6. Efetue o cadastro e login na plataforma: 
+6. Efetue o cadastro e login na plataforma
+7. Aproveite!
 
 # :hammer: Ferramentas utilizadas
 
