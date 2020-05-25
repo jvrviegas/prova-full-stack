@@ -28,7 +28,7 @@ _Programas necessários:_
 - [Postgres](https://github.com/postgres/postgres)
 - [Redis](https://redis.io/)
 
-## 🗄️ Criar as bases de dados
+# 🗄️ Criar as bases de dados
 
 ```
 # Criar um container com a imagem do Postgres
@@ -46,7 +46,7 @@ docker start redis
 
 ```
 
-## 🖥 Iniciando a API REST
+# 🖥 Iniciando a API REST
 
 1. Clonar o repositório com `git clone https://github.com/jvrviegas/prova-full-stack.git`
 2. Entre dentro da pasta do projeto com `cd prova-full-stack/backend`
@@ -59,7 +59,7 @@ docker start redis
 9. Para executar as filas execute no terminal 
 10. `yarn queue`
 
-## 💻 Iniciando a plataforma web
+# 💻 Iniciando a plataforma web
 
 1. Abra um terminal entre na pasta `cd prova-full-stack/frontend`
 2. Instale todas as dependências com o comando `yarn`
@@ -68,7 +68,7 @@ docker start redis
 5. Uma nova aba do navegador abrirá na url http://localhost:3000 
 6. Efetue o cadastro e login na plataforma: 
 
-## :hammer: Ferramentas utilizadas
+# :hammer: Ferramentas utilizadas
 
 - ⚛️ **Node.js** - É uma Biblioteca JavaScript para criar mobile Apps 
 - ⚛️ **ReactJs** - É uma Biblioteca Javascript para criar interfaces de usuário.
