@@ -1,8 +1,8 @@
 
 <h1 align="center">
     <img alt="TodoList" src=".github/logo.png" width="100px" />
+    <p> Todo List </p>
 </h1>
-<h1 align="center">Todo List</h1>
 
 
 # Prova de Avaliação Técnica
